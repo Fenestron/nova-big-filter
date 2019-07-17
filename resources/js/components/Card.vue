@@ -14,36 +14,14 @@
             <!--</div>-->
 
             <!-- Custom Filters -->
-            <div v-for="filters in this.filterRows">
-                <div class="float-left nova-big-filter-col">
+            <div v-for="filters in this.filterRows" style="display: flex; justify-content: space-between; width: 100%">
+                <div v-for="(filter, index) in filters" style="width: 100%">
                     <component
-                            v-if="filters[0]"
+                            v-if="filter"
                             :resource-name="resourceName"
-                            :key="filters[0].name"
-                            :filter-key="filters[0].class"
-                            :is="filters[0].component"
-                            @input="$emit('filter-changed')"
-                            @change="$emit('filter-changed')"
-                    />
-                </div>
-                <div class="float-left nova-big-filter-col">
-                    <component
-                            v-if="filters[1]"
-                            :resource-name="resourceName"
-                            :key="filters[1].name"
-                            :filter-key="filters[1].class"
-                            :is="filters[1].component"
-                            @input="$emit('filter-changed')"
-                            @change="$emit('filter-changed')"
-                    />
-                </div>
-                <div class="float-left nova-big-filter-col">
-                    <component
-                            v-if="filters[2]"
-                            :resource-name="resourceName"
-                            :key="filters[2].name"
-                            :filter-key="filters[2].class"
-                            :is="filters[2].component"
+                            :key="filter.name"
+                            :filter-key="filter.class"
+                            :is="filter.component"
                             @input="$emit('filter-changed')"
                             @change="$emit('filter-changed')"
                     />
@@ -132,14 +110,7 @@
             },
 
             filterRows(){
-                if( this.filters.length > 3)
-                {
-                    return _.chunk(this.filters, 3)
-                }
-                else
-                {
-                    return [ this.filters ]
-                }
+                return _.chunk(this.filters, this.filters.length)
             }
         },
     }

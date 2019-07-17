@@ -3,9 +3,9 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/nrml-co/nova-big-filter.svg?style=flat)](https://packagist.org/packages/nrml-co/nova-big-filter)
 
 
-A nice looking filter menu that's always open.
+A nice looking filter menu that's always open **(in one line)**.
 
-![Nova Big Filter Screenshot](https://raw.githubusercontent.com/nrml-co/nova-big-filter/master/resources/img/screenshot.png)
+![Nova Big Filter Screenshot](resources/img/screenshot.png)
 
 ## Install
 
