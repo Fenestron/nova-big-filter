@@ -115,3 +115,12 @@
         },
     }
 </script>
+<style scoped>
+    .bg-30 >>> .overflow-x-hidden {
+        overflow-x: visible;
+    }
+
+    .bg-30 >>> .overflow-y-auto {
+        overflow-y: visible;
+    }
+</style>
